@@ -9,6 +9,7 @@ const authRoute = require('./src/routes/authRoute');
 const meRoute = require('./src/routes/mypageRoute');
 const votesRoute = require('./src/routes/voteRoute');
 const profileRoute = require('./src/routes/profileRoute');
+const simRoute = require('./src/routes/simThreadRoute');
 
 const app = express();
 app.use(cors());
@@ -19,7 +20,7 @@ app.use('/onboard', authRoute);     // /onboard/login
 app.use('/mypage', meRoute);             // /me
 app.use('/votes', votesRoute);
 app.use('/profile', profileRoute); // → POST /profile/type
-
+app.use('/sim', simRoute);
 
 // 전역 에러 핸들러는 마지막
 app.use(errorMiddleware);
