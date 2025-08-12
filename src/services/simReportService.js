@@ -2,11 +2,6 @@
 const { supabaseAdmin } = require('../config/supabaseClient');
 const AppError = require('../utils/appError');
 const scenarios = require('../data/scenarios.json');
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
-const tz = require('dayjs/plugin/timezone');
-dayjs.extend(utc);
-dayjs.extend(tz);
 
 // ---- 시나리오 빠른 조회용 맵 구성: { "5-10": "학교 앞 골목길..." } ----
 const SCENARIO_TEXT_MAP = (() => {
@@ -30,9 +25,9 @@ exports.getSummaryByDate = async ({ userId, date }) => {
   if (!userId) throw new AppError(401, 'Unauthorized');
   if (!date) throw new AppError(400, 'date is required');
 
-  // 한국 시간(KST) 기준으로 날짜 시작/끝 → UTC 변환
-  const start = dayjs.tz(date, 'Asia/Seoul').startOf('day').utc().format();
-  const end = dayjs.tz(date, 'Asia/Seoul').endOf('day').utc().format();
+  // 변환 제거: date 그대로 사용
+  const start = `${date}T00:00:00`;
+  const end = `${date}T23:59:59`;
 
   const { data, error } = await supabaseAdmin
     .from('scenario_summary')
