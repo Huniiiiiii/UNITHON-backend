@@ -20,7 +20,7 @@ exports.loginWithEmail = async ({ email, password }) => {
   {
     const { data: profile, error: profileErr } = await supabaseAdmin
       .from('profiles')
-      .select('name')
+      .select('name, type')
       .eq('user_id', user.id)         // ← FK 컬럼명이 다르면 여기만 바꾸세요 (예: .eq('id', user.id))
       .single();
 
@@ -28,12 +28,14 @@ exports.loginWithEmail = async ({ email, password }) => {
       throw new AppError(500, profileErr.message || 'Failed to fetch profile');
     }
     name = profile?.name ?? null;
+    type = profile?.type ?? null;
   }
 
   // 3) 필요한 값만 리턴 (user 전체 X)
   return {
     id: user.id,
     name, // 없으면 null
+    type,
     accessToken: session.access_token,
     refreshToken: session.refresh_token,
     expiresIn: session.expires_in
