@@ -1,0 +1,38 @@
+[
+  {
+    "type": "A+B",
+    "emotionExpression": "감정 표현이 능숙하고 위트 있음",
+    "communicationTone": "분위기 살피며 적절히 직설적",
+    "relationshipDrive": "상황에 따라 리드하거나 배려함"
+  },
+  {
+    "type": "A+C",
+    "emotionExpression": "겉으로는 적극적이나 내면은 서툴 수 있음",
+    "communicationTone": "직설과 조심스러움이 공존",
+    "relationshipDrive": "리드하지만 긴장하거나 주저할 수 있음"
+  },
+  {
+    "type": "B+A",
+    "emotionExpression": "감정 표현은 안정적",
+    "communicationTone": "분위기 파악에 유연",
+    "relationshipDrive": "주도하거나 균형 맞춤"
+  },
+  {
+    "type": "B+C",
+    "emotionExpression": "공감은 뛰어나나 감정 표현에 소극적",
+    "communicationTone": "따뜻하고 부드러움",
+    "relationshipDrive": "상대방에 맞춰 흐름을 맞춤"
+  },
+  {
+    "type": "C+A",
+    "emotionExpression": "감정을 잘 숨기지만, 마음먹으면 용감",
+    "communicationTone": "신중함 속 과감함",
+    "relationshipDrive": "평소엔 수동적이나 용기낼 수 있음"
+  },
+  {
+    "type": "C+B",
+    "emotionExpression": "감정 표현은 서툴지만 공감능력 있음",
+    "communicationTone": "부드럽고 조용한 톤",
+    "relationshipDrive": "리드보다 반응 중심"
+  }
+]
