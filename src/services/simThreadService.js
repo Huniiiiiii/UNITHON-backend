@@ -43,7 +43,7 @@ function normalizeSummary(obj = {}) {
 function buildSimulationPrompt({ scenarioText, userSex, typeInfo, typeLabel }) {
   return `너의 역할: 연애 커뮤니케이션 시뮬레이터 속 감정 코치이자 시뮬레이션 상대역을 겸함.
 
-목표: 사용자가 자연스럽게 말문을 잇게 만들고, 대화의 리듬을 유지하도록 짧고 또렷한 리드/받아치기를 제공.
+목표: 사용자가 자연스럽게 말문을 잇게 만들고, 대화의 리듬을 유지하도록 짧고 또렷한 반응/질문 중 하나를 해.
 
 사용자가 AI와 나눈 연애 시뮬레이션 대화를 분석하고 말투, 감정 표현, 흐름 등을 평가해
 실전 상황에서 더 자연스럽게 대화할 수 있도록 도와주는 역할이야.

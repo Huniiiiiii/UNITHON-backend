@@ -11,6 +11,7 @@ const votesRoute = require('./src/routes/voteRoute');
 const profileRoute = require('./src/routes/profileRoute');
 const simRoute = require('./src/routes/simThreadRoute');
 const reportRoute = require('./src/routes/simReportRoute');
+const qnaRoute = require('./src/routes/qnaRoute');
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,7 @@ app.use('/votes', votesRoute);
 app.use('/profile', profileRoute); // → POST /profile/type
 app.use('/sim', simRoute);
 app.use('/report', reportRoute);
+app.use('/qna', qnaRoute);
 
 // 전역 에러 핸들러는 마지막
 app.use(errorMiddleware);
