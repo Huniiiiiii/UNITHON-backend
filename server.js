@@ -12,6 +12,7 @@ const profileRoute = require('./src/routes/profileRoute');
 const simRoute = require('./src/routes/simThreadRoute');
 const reportRoute = require('./src/routes/simReportRoute');
 const qnaRoute = require('./src/routes/qnaRoute');
+const qnaReportRoute = require('./src/routes/chatSummaryRoute');
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ app.use('/profile', profileRoute); // → POST /profile/type
 app.use('/sim', simRoute);
 app.use('/report', reportRoute);
 app.use('/qna', qnaRoute);
+app.use('/qnareport', qnaReportRoute); // → GET /summary?date=YYYY-MM-DD
 
 // 전역 에러 핸들러는 마지막
 app.use(errorMiddleware);
