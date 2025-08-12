@@ -39,3 +39,4 @@ app.listen(PORT, () => {
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok', timestamp: new Date() });
 });
+app.head('/health', (req, res) => res.sendStatus(200));
