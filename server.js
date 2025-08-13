@@ -15,7 +15,11 @@ const qnaRoute = require('./src/routes/qnaRoute');
 const qnaReportRoute = require('./src/routes/chatSummaryRoute');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*', // 모든 도메인 허용 (개발용), 보안 필요하면 'http://localhost:3000'처럼 명시
+  credentials: true
+}));
+
 app.use(express.json());
 
 // 개별 라우트 등록
